@@ -1,0 +1,31 @@
+
+    <br>
+    <h2 class="h2">Tabla Invernaderos</h2>
+    <div class="container">
+      <button *ngIf="tieneAcceso !== undefined && tieneAcceso" routerLink="/formulario-inver" class="btn">Agregar invernadero</button>
+    </div>
+  
+    <br>
+     <div class="container">
+    <div class="row">
+      <div class="col mt-3" *ngFor="let invernadero of invernaderos">
+        <div class="card" style="width: 18rem;">
+          
+          <div class="card-body">
+            <h5 class="card-title">Nombre:{{invernadero.nombre}}</h5>
+            <p class="card-text">Ubicacion:{{invernadero.ubicacion}}</p>
+            <p class="card-text">Usuario:{{invernadero.usuario}}</p>
+            <button class="btn" routerLink="/tabla-sensores/{{invernadero.nombre}}">Sensores</button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+   </div>
+   <router-outlet></router-outlet>
+
+    
+ 
+
+

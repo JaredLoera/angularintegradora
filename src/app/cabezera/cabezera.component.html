@@ -1,0 +1,40 @@
+
+    <nav class="navbar bg-body-tertiary" style="background-color: #A5A5A5;">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-2" href="#">
+        <img src="../../assets/invernadero.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+       Invernadero
+      </a>
+      <a class="nav-link fs-2">Inicio</a>
+      <a class="nav-link fs-2" routerLink="/tabla-inver">Invernaderos</a>
+      <a class="nav-link fs-2" *ngIf="user?.rol_id == 1" routerLink="tabla-user">Usuarios</a>    
+      <a class="btn btn-outline-success btn-lg" role="button" *ngIf="!isLogin" routerLink="/login">Login</a>
+      <a class="btn btn-outline-danger btn-lg" role="button" *ngIf="isLogin" (click)="cerrarSesion()">Cerrar sesion</a>
+    </div>
+</nav>
+
+<!--  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="textoheader" *ngIf="showHeader">
+    <!--
+    <header class="header">
+        <div class="logo">
+            <img src="../../assets/invernadero.png" alt="Logo de la marca" routerLink="">
+        </div>
+        <nav>
+           <      
+        </nav>
+        <a class="btn" *ngIf="!isLogin" routerLink="/login" ><button>LOGIN</button></a>
+        <a class="btn" *ngIf="isLogin" (click)="cerrarSesion()"><button>Cerrar sesion</button></a>
+    </header>
+
+   </div>
+</body>
+</html>-->

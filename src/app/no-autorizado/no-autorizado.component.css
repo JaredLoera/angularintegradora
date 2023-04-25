@@ -1,0 +1,90 @@
+.no-autorizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #2a2b38;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .no-autorizado h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .no-autorizado p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .no-autorizado button {
+    background-color: white;
+    color: #2a2b38;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .no-autorizado button:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+    
+  }
+  
+  .btn:hover {
+    background-color: #2a2b38;
+    color: #fff;
+    border-color: #000000;
+  }
+
+  button {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #2a2b38;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-right: 20px;
+  }
+  
+  .button:hover {background-color: #000000}
+  
+  .button:active {
+    background-color: #2a2b38;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

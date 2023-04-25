@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Invernadero</title>
+	<link rel="stylesheet" type="text/css">
+</head>
+<body>
+  <br>
+	<form (ngSubmit)="onSubmit()" #companiaForm="ngForm" class="text">
+        <h2>Invernadero</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required [(ngModel)]="nombre">
+      
+        <label for="ubicacion">Ubicacion:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required [(ngModel)]="ubicacion">
+      
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required [(ngModel)]="usuario">
+      
+        <br><br>
+
+        <div class="container text-center">
+          <button type="submit" [disabled]="!companiaForm.valid" class="button">Enviar</button>
+        </div>
+      </form>
+</body>
+</html>

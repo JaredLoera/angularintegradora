@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificar SMS</title>
+	<link rel="stylesheet" type="text/css">
+</head>
+<body>
+	<form (ngSubmit)="onSubmit()" #companiaForm="ngForm">
+        <h2>Verificar SMS</h2>
+        <label for="codigo">codigo: </label>
+        <input type="number" id="codigo" name="codigo" required [(ngModel)]="codigo">
+        
+        <br><br>
+      
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+</body>
+</html>
+

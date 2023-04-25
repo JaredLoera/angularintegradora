@@ -1,0 +1,145 @@
+    <br><br>
+    
+
+    
+    <div  >
+      <h2 class="h2">Datos Sensor</h2>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        </div>
+        
+        <br><br>
+
+        <div class="col">
+
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th class="col-3">Sensor</th>
+                <th class="col-4">Invernadero</th>
+                <th class="col">Fecha</th>
+                <th class="col">Dato</th>
+                <th class="col">Medida</th>
+                <th></th>
+            </tr>
+                <tbody *ngFor="let datosen of datosens; let i = index" class="text" [ngClass]="{'primera-fila': i === 0}"  >
+                    <tr *ngIf="i <= 0">
+                        <td class="col">{{ datosen.nombre }}</td>
+                        <td class="col">{{ datosen.invernadero }}</td>
+                        <td class="col">{{ datosen.fecha }}</td>
+                        <td class="col" *ngIf="datosen.nombre === 'Temperatura'">
+                            <h1 [ngStyle]="{'color': datosen.datos > 40 ? 'red' : 'deepskyblue	'}">{{ datosen.datos }}</h1>
+                        </td>
+                        <td class="col" *ngIf="datosen.nombre === 'Ultrasonico'">
+                            <h1 [ngStyle]="{'color': datosen.datos < 5 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                        </td>
+                        <td class="col" *ngIf="datosen.nombre === 'Infrarojo'">
+                            <h1 [ngStyle]="{'color': datosen.datos > 0 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                        </td>
+                        <td class="col" *ngIf="datosen.nombre === 'Fotoresistencia'">
+                            <h1 [ngStyle]="{'color': datosen.datos === 0 ? 'black' : 'yellow'}">{{ datosen.datos }}</h1>
+                        </td>
+                        <td class="col" *ngIf="datosen.nombre === 'Gas'">
+                            <h1 [ngStyle]="{'color': datosen.datos > 500 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                        </td>
+                        <td class="col" *ngIf="datosen.nombre === 'NivelAgua'">
+                            <h1 [ngStyle]="{'color': datosen.datos > 230 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                        </td>
+                        <td class="col" *ngIf="datosen.nombre === 'HumedadSuelo'">
+                            <h1 [ngStyle]="{'color': datosen.datos < 50 ? 'brown' : 'blue'}">{{ datosen.datos }}</h1>
+                        </td>
+                        <td class="col">{{ datosen.medida}}</td>
+                        <td>
+                            <div class="d-flex">
+                                <button routerLink="/tabla-inver" (click)="ngOnDestroyz" class="btn">Volver</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <router-outlet></router-outlet> 
+        </div>
+        <div class="col">
+        </div>
+      </div>
+    </div>
+
+<br><br><br>
+
+<div  >
+  <h2 class="h2">Historial</h2>
+</div>
+<br><br>
+    <form (ngSubmit)="buscar()">
+      <label>Ordenar por:</label>
+      <select name="orden" [(ngModel)]="orden">
+        <option value="antigua">Fecha más antigua</option>
+        <option value="reciente">Fecha mas reciente</option>
+        <option value="Dmayor">Dato mayor</option>
+        <option value="Dmenor">Dato menor</option>
+      </select>
+      <button type="submit" class="btn">Buscar</button>
+    </form>
+    <br><br>
+    <div class="col">
+
+      <div class="table-responsive ">
+        <table class="table">
+          <tr>
+            <th class="col-3">Sensor</th>
+            <th class="col-4">Invernadero</th>
+            <th class="col">Fecha</th>
+            <th class="col">Dato</th>
+            <th class="col">Medida</th>
+            <th></th>
+        </tr>
+            <tbody>
+                <tr *ngFor="let datosen of sensordatos" class="text" >
+                    <td class="col">{{ datosen.nombre }}</td>
+                    <td class="col">{{ datosen.invernadero }}</td>
+                    <td class="col">{{ datosen.fecha }}</td>
+                    <td class="col" *ngIf="datosen.nombre === 'Temperatura'">
+                        <h1 [ngStyle]="{'color': datosen.datos > 40 ? 'red' : 'deepskyblue	'}">{{ datosen.datos }}</h1>
+                    </td>
+                    <td class="col" *ngIf="datosen.nombre === 'Ultrasonico'">
+                        <h1 [ngStyle]="{'color': datosen.datos < 5 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                    </td>
+                    <td class="col" *ngIf="datosen.nombre === 'Infrarojo'">
+                        <h1 [ngStyle]="{'color': datosen.datos > 0 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                    </td>
+                    <td class="col" *ngIf="datosen.nombre === 'Fotoresistencia'">
+                        <h1 [ngStyle]="{'color': datosen.datos === 0 ? 'black' : 'yellow'}">{{ datosen.datos }}</h1>
+                    </td>
+                    <td class="col" *ngIf="datosen.nombre === 'Gas'">
+                        <h1 [ngStyle]="{'color': datosen.datos > 500 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                    </td>
+                    <td class="col" *ngIf="datosen.nombre === 'NivelAgua'">
+                        <h1 [ngStyle]="{'color': datosen.datos > 230 ? 'red' : 'green'}">{{ datosen.datos }}</h1>
+                    </td>
+                    <td class="col" *ngIf="datosen.nombre === 'HumedadSuelo'">
+                        <h1 [ngStyle]="{'color': datosen.datos < 50 ? 'brown' : 'blue'}">{{ datosen.datos }}</h1>
+                    </td>
+                    <td class="col">{{ datosen.medida}}</td>
+                    <td>
+                  
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <router-outlet></router-outlet> 
+    </div>
+
+
+    
+
+
+
+    
+

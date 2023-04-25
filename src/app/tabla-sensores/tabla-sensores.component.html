@@ -1,0 +1,28 @@
+<br>
+<h2 class="h2">Tabla sensores</h2>
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-3" *ngFor="let sensor of sensores">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Nombre Sensor:{{sensor.nombreSensor}}</h5>
+                  <p class="card-text">Tipo:{{sensor.tipo}}</p>
+                  <p class="card-text">Descripcion:{{sensor.descr}}</p>
+                  <p class="card-text">Invernadero:{{sensor.invernadero}}</p>
+
+                  <div class="button-container">
+                    <button class="btn" routerLink="/tabla-inver">Volver</button>
+                    <button class="btn" routerLink="/tabla-datosens/{{sensor.nombreSensor}}/{{sensor.invernadero}}">Ver datos</button>
+                  </div>
+                </div>
+                
+              </div>
+        </div>
+        
+    </div>
+    <br>
+</div>
+<router-outlet></router-outlet>

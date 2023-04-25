@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Usuario</title>
+	<link rel="stylesheet" type="text/css">
+</head>
+<body>
+    <br>
+	<form class="text">
+        <h2>Usuario</h2>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required [(ngModel)]="usuario.name" *ngIf="usuario">
+      
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" required [(ngModel)]="usuario.email" *ngIf="usuario">
+
+
+         <label for="rol_id">Rol: </label>
+        <select id="rol_id" name="rol_id" required [(ngModel)]="selectedRolId" *ngIf="roles">
+        <option *ngFor="let rol of roles" [value]="rol.id">{{rol.nombre}}</option>
+        </select>
+
+        <label for="Estatus">Estatus:</label>
+        <select id="Estatus" name="Estatus" required [(ngModel)]="usuario.status" *ngIf="usuario">
+          <option *ngFor="let Estatu of status" [value]="Estatu">{{Estatu}}</option>
+        </select>
+        <br><br>
+        <div class="container text-center">
+            <button type="submit" class="button" (click)="onSubmit()">Modificar</button>
+        </div>
+        
+      </form>
+</body>
+</html>
